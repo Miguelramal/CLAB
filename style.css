@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  background-color: #F6F6F6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+#svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.svg-letter {
+  height: 220px;
+  width: auto;
+  color: #E5E5E5; /* Color inicial de las letras */
+  mix-blend-mode: negative; /* Aplicar efecto de diferencia */
+}
+
+#invert-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 12px;
+  height: 12px;
+  background-color: #E5E5E5;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+body.inverted #invert-button {
+  background-color: #F6F6F6;
+}
+
+body.inverted {
+  background-color: #E5E5E5;
+}
+
+body.inverted .svg-letter {
+  color: #F6F6F6; /* Cambiar color de las letras */
+}
