@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  background-color: #F6F6F6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+#svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.svg-letter {
+  height: 220px;
+  width: auto;
+}
+
+#info-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 16px;
+  height: 16px;
+  background-color: #000;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#info-text {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 28px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  color: #000;
+  z-index: 9999;
+  padding: 0 16px;
+  max-width: calc(100% - 32px);
+  max-height: 80%;
+  overflow: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* Media Query para pantallas móviles (menos de 768px de ancho) */
+@media (max-width: 768px) {
+  #svg-container {
+    flex-direction: column-reverse; /* Cambiamos el orden de las letras a B A L C */
+    align-items: center; /* Aseguramos que las letras estén centradas */
+    gap: 16px; /* Espaciado entre las letras */
+  }
+
+  /* Rotación de las letras para que se lean de abajo a arriba */
+  .svg-letter:nth-child(1) { /* B */
+    transform: rotate(-90deg);
+  }
+  .svg-letter:nth-child(2) { /* A */
+    transform: rotate(-90deg);
+  }
+  .svg-letter:nth-child(3) { /* L */
+    transform: rotate(-90deg);
+  }
+  .svg-letter:nth-child(4) { /* C */
+    transform: rotate(-90deg);
+  }
+
+  /* Ajuste de tamaño de las letras */
+  .svg-letter {
+    height: 180px; /* Ajustamos el tamaño de las letras */
+    width: auto;
+  }
+
+  /* Ajuste del espaciado entre las letras */
+  .svg-letter:nth-child(1), /* B */
+  .svg-letter:nth-child(2), /* A */
+  .svg-letter:nth-child(3), /* L */
+  .svg-letter:nth-child(4) { /* C */
+    margin-bottom: 0px; /* Agregar margen entre todas las letras */
+  }
+
+  /* Para asegurarnos de que la letra más alta (C y L) no se separe demasiado */
+  .svg-letter:nth-child(1), /* B */
+  .svg-letter:nth-child(4) { /* C */
+    margin-bottom: 16px; /* Ajuste de espacio para B y C */
+  }
+
+  .svg-letter:nth-child(2) { /* A */
+    margin-bottom: -40px; /* Ajuste de espacio para A */
+  }
+
+  #info-button {
+    top: 50px; /* Aseguramos que el botón no se superponga */
+    right: 16px;
+  }
+
+  #info-text {
+    font-size: 20px; /* Ajustamos el tamaño de fuente */
+    top: 50px; /* Ajustamos la posición del texto */
+    left: 16px;
+  }
+
+  #info-button {
+    top: 16px; /* Aseguramos que el botón no se superponga */
+    right: 16px;
+  }
+
+  #info-text {
+    font-size: 20px; /* Ajustamos el tamaño de fuente */
+    top: 16px; /* Ajustamos la posición del texto */
+    left: 16px;
+  }
+}
