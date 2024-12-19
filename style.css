@@ -56,7 +56,7 @@ body {
 
 
 /* Media Query para pantallas móviles (menos de 768px de ancho) */
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   #svg-container {
     flex-direction: column-reverse; /* Cambiamos el orden de las letras a B A L C */
     align-items: center; /* Aseguramos que las letras estén centradas */
@@ -107,7 +107,7 @@ body {
   }
 
   #info-text {
-    font-size: 20px; /* Ajustamos el tamaño de fuente */
+    font-size: 36px; /* Ajustamos el tamaño de fuente */
     top: 50px; /* Ajustamos la posición del texto */
     left: 16px;
   }
