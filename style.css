@@ -1,3 +1,4 @@
+/* General */
 body {
   margin: 0;
   background-color: #F6F6F6;
@@ -8,6 +9,8 @@ body {
   flex-direction: column;
   font-family: Arial, sans-serif;
   position: relative;
+  overflow-x: hidden; /* Eliminar scroll horizontal */
+  box-sizing: border-box; /* Incluir padding y borde dentro de las dimensiones */
 }
 
 #svg-container {
@@ -54,13 +57,17 @@ body {
   display: none;
 }
 
-
 /* Media Query para pantallas móviles (menos de 768px de ancho) */
 @media (max-width: 1000px) {
+  html, body {
+    height: 100%; /* Aseguramos que no haya scroll vertical */
+  }
+
   #svg-container {
     flex-direction: column-reverse; /* Cambiamos el orden de las letras a B A L C */
     align-items: center; /* Aseguramos que las letras estén centradas */
     gap: 16px; /* Espaciado entre las letras */
+    padding: 0; /* Eliminamos cualquier padding adicional */
   }
 
   /* Rotación de las letras para que se lean de abajo a arriba */
@@ -79,7 +86,7 @@ body {
 
   /* Ajuste de tamaño de las letras */
   .svg-letter {
-    height: 300px; /* Ajustamos el tamaño de las letras */
+    height: 280px; /* Ajustamos el tamaño de las letras */
     width: auto;
   }
 
@@ -88,38 +95,24 @@ body {
   .svg-letter:nth-child(2), /* A */
   .svg-letter:nth-child(3), /* L */
   .svg-letter:nth-child(4) { /* C */
-    margin-bottom: 16px; /* Agregar margen entre todas las letras */
-  }
-
-  /* Para asegurarnos de que la letra más alta (C y L) no se separe demasiado */
-  .svg-letter:nth-child(1), /* B */
-  .svg-letter:nth-child(4) { /* C */
-    margin-bottom: 36px; /* Ajuste de espacio para B y C */
-  }
-
-  .svg-letter:nth-child(2) { /* A */
-    margin-bottom: -52px; /* Ajuste de espacio para A */
+    margin-bottom: 16px; /* Margen uniforme entre todas las letras */
   }
 
   #info-button {
-    top: 50px; /* Aseguramos que el botón no se superponga */
-    right: 16px;
-  }
-
-  #info-text {
-    font-size: 36px; /* Ajustamos el tamaño de fuente */
-    top: 36px; /* Ajustamos la posición del texto */
-    left: 16px;
-  }
-
-  #info-button {
-    top: 32px; /* Aseguramos que el botón no se superponga */
+    position: fixed; /* Aseguramos que el botón esté siempre visible */
+    top: 32px;
     right: 32px;
+    width: 32px;
+    height: 32px;
   }
 
   #info-text {
-    font-size: 36px; /* Ajustamos el tamaño de fuente */
-    top: 16px; /* Ajustamos la posición del texto */
+    position: fixed; /* Aseguramos que el texto esté fijo */
+    top: 32px;
     left: 16px;
+    right: 50px;
+    font-size: 20px; /* Ajustamos el tamaño de fuente */
+    max-height: 80%; /* Limitar la altura máxima */
+    overflow-y: auto; /* Permitir scroll solo en el texto */
   }
 }
