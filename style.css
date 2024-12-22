@@ -118,10 +118,10 @@ body {
 
   #info-text {
     position: fixed; /* Aseguramos que el texto esté fijo */
-    top: 32px;
+    top: 24px;
     left: 16px;
-    right: 50px;
-    font-size: 20px; /* Ajustamos el tamaño de fuente */
+    right: 60px;
+    font-size: 32px; /* Ajustamos el tamaño de fuente */
     max-height: 80%; /* Limitar la altura máxima */
     overflow-y: auto; /* Permitir scroll solo en el texto */
   }
