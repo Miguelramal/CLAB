@@ -79,7 +79,7 @@ body {
 
   /* Ajuste de tamaño de las letras */
   .svg-letter {
-    height: 180px; /* Ajustamos el tamaño de las letras */
+    height: 300px; /* Ajustamos el tamaño de las letras */
     width: auto;
   }
 
@@ -88,17 +88,17 @@ body {
   .svg-letter:nth-child(2), /* A */
   .svg-letter:nth-child(3), /* L */
   .svg-letter:nth-child(4) { /* C */
-    margin-bottom: 0px; /* Agregar margen entre todas las letras */
+    margin-bottom: 16px; /* Agregar margen entre todas las letras */
   }
 
   /* Para asegurarnos de que la letra más alta (C y L) no se separe demasiado */
   .svg-letter:nth-child(1), /* B */
   .svg-letter:nth-child(4) { /* C */
-    margin-bottom: 16px; /* Ajuste de espacio para B y C */
+    margin-bottom: 36px; /* Ajuste de espacio para B y C */
   }
 
   .svg-letter:nth-child(2) { /* A */
-    margin-bottom: -40px; /* Ajuste de espacio para A */
+    margin-bottom: -52px; /* Ajuste de espacio para A */
   }
 
   #info-button {
@@ -108,17 +108,17 @@ body {
 
   #info-text {
     font-size: 36px; /* Ajustamos el tamaño de fuente */
-    top: 50px; /* Ajustamos la posición del texto */
+    top: 36px; /* Ajustamos la posición del texto */
     left: 16px;
   }
 
   #info-button {
-    top: 16px; /* Aseguramos que el botón no se superponga */
-    right: 16px;
+    top: 32px; /* Aseguramos que el botón no se superponga */
+    right: 32px;
   }
 
   #info-text {
-    font-size: 20px; /* Ajustamos el tamaño de fuente */
+    font-size: 36px; /* Ajustamos el tamaño de fuente */
     top: 16px; /* Ajustamos la posición del texto */
     left: 16px;
   }
